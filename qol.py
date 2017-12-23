@@ -1,14 +1,13 @@
 #!/usr/bin/python
 import time
+from termcolor import colored
 
-answer = input("What is the answer for the question of life ? : ")
+print colored("What is the answer for the ultimate question of Life, the Universe and Everything? ","blue")
+answer = raw_input("Answer: ")
 
-print("\nAnswer")
-time.sleep(2)
-print("is")
 time.sleep(5)
 
-if answer == 42 :
-    print("Correct!")
+if answer == "42" :
+    print colored("\nCORRECT!","green")
 else:
-    print("Wrong!")
+    print colored("\nWRONG!","red")
