@@ -26,48 +26,66 @@ while True:
 
 #print colored file
     elif(choice == "p"):
-        color = raw_input("Choose color (red,blue,cyan,magenta,yellow): ")
-        print colored("\nNow we print selected file in your color :)","blue")
-        file.seek(0,0) # always set reading pointer to start
-        text = file.read() #no input so from begin to end
-        time.sleep(5)
 
-        if(color == ""):
-            print("\n+++++++++++++")
-            print(text)
-            print("+++++++++++++\n")
-        else:
-            print("\n+++++++++++++")
-            print colored(text,color)
-            print("+++++++++++++\n")
+        #just a checking flag
+        flag = True
+
+        if(file.closed):
+            print colored("\nERROR !! \nThere is no file opened\n","red")
+            flag = False
+
+        if(flag):
+            color = raw_input("Choose color (red,blue,cyan,magenta,yellow): ")
+            print colored("\nNow we print selected file in your color :)","blue")
+            file.seek(0,0) # always set reading pointer to start
+            text = file.read() #no input so from begin to end
+            time.sleep(5)
+
+            if(color == ""):
+                print("\n+++++++++++++")
+                print(text)
+                print("+++++++++++++\n")
+            else:
+                print("\n+++++++++++++")
+                print colored(text,color)
+                print("+++++++++++++\n")
 
 #i have to delete color variable because if you use same choice
 #there is no output
-        del color
+            del color
 
 #close file
     elif(choice == "c"):
-        if file.closed == True:
-            print colored("\nERROR!!!\nThere is no file opened","red")
-            break
-        print colored("\nClosing opened file","blue")
-        file.close()
-        time.sleep(3)
-        print colored("File " + file.name + "","blue")
-        print colored("Closed SUCCESFULLY\n","green")
-        del file
+        #just a checking flag
+        flag = True
+
+        if (file.closed):
+            print colored("\nERROR!!!\nThere is no file opened\n","red")
+            flag = False
+
+        if(flag):
+            print colored("\nClosing opened file","blue")
+            file.close()
+            time.sleep(3)
+            print colored("File " + file.name + "","blue")
+            print colored("Closed SUCCESFULLY\n","green")
+            del file
 
 #info about file
     elif(choice == "i"):
-        if file.closed == True:
-            print colored("ERROR!!!\nThere is no file opened","red")
-            break
-        print colored("\nInfo: ","blue")
-        time.sleep(3)
-        print "File name: ",file.name
-        print "File closed: ",file.closed
-        print "Opened in mode: ",file.mode
-        print "\n"
+        flag = True
+
+        if (file.closed):
+            print colored("\nERROR!!!\nThere is no file opened\n","red")
+            flag = False
+
+        if(flag):
+            print colored("\nInfo: ","blue")
+            time.sleep(3)
+            print "File name: ",file.name
+            print "File closed: ",file.closed
+            print "Opened in mode: ",file.mode
+            print "\n"
 
 #quit program
     elif(choice == "q"):
