@@ -11,3 +11,16 @@ print colored("And this could be our error output","magenta")
 print colored("ERROR","magenta")
 print colored("or this","red")
 print colored("ERROR","red")
+
+'''
+Text colors:
+
+-    grey
+-    red
+-    green
+-    yellow
+-    blue
+-    magenta
+-    cyan
+-    white
+'''
