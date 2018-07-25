@@ -8,8 +8,8 @@
 
 ## Requirements
   - library Termcolor needed !
-  - all necessary are in 'requirements.txt'
-  - for install use 'pip install -r requirements.txt'
+  - all necessary are in ```requirements.txt```
+  - for install use ```pip install -r requirements.txt```
 
  ### Contact
   - dobinoo5@gmail.com
